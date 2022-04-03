@@ -1,0 +1,220 @@
+.menu h1 {
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+}
+
+* {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    & img {
+      width: 50%;
+    }
+  }
+  a:visited {
+    color: black;
+  }
+  .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 5%;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    a:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $color-mediumgray;
+  box-shadow: inset 0px 2px 5px gray;
+  height: 60px;
+  color: $color-darkgray;
+  & i {
+    margin-right: 10px;
+  }
+  & p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.main {
+  background: $color-lightgray;
+  margin-bottom: 50px;
+  & h2 {
+    padding-top: 50px;
+    margin-left: 5%;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-bottom: 0;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    font-size: 18px;
+  }
+  & i {
+    margin-right: 10px;
+    font-size: 10px;
+    @media screen and (min-width: 1024px) {
+      font-size: 15px;
+    }
+  }
+  & li {
+    margin-bottom: 10px;
+    @media screen and (min-width: 1024px) {
+      margin: auto;
+    }
+    & a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+footer {
+  background: $color-darkgray;
+  color: white;
+  padding-bottom: 20px;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  & img {
+    padding: 20px 0 0 20px;
+    width: 150px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(312deg)
+      brightness(101%) contrast(106%);
+  }
+}
+
+.logo_footer {
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.img_topside {
+  height: 300px;
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 120%;
+  }
+}
+
+.head {
+  width: 100%;
+  font-size: 18px;
+  background-color: $color-lightgray;
+  padding: 20px 0 50px 0;
+  & h1 {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    @include title;
+  }
+  &_bloc {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  & p {
+    margin-bottom: 40px;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+  .number {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: -10px;
+    background-color: $color-primary;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: white;
+    font-weight: normal;
+  }
+}
+
+h2 {
+  margin: 50px 0 30px 30px;
+  @include title;
+}
+
+p {
+  @include text_size;
+}
+
+.loading_spin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    overflow: hidden;
+    opacity: 0.6;
+    animation: custom-background 2s linear;
+  }
+  &::after {
+    @media screen and (min-width: 1024px) {
+      width: 150px;
+      height: 150px;
+    }
+    box-sizing: border-box;
+    z-index: 10002;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -50px;
+    border: 5px solid $color-tertiary;
+    border-top: 5px solid $color-primary;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    animation: custom-loading 2s linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+body {
+  position: relative;
+}

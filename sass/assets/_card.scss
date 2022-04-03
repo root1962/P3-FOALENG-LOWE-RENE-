@@ -1,0 +1,182 @@
+.card {
+  width: 90%;
+  border-radius: 1em;
+  margin: auto;
+  background: white;
+  height: 250px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  @include box-shadow;
+  @media screen and (min-width: 1024px) {
+    width: 40%;
+  }
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 75%;
+    border-radius: 1em 1em 0 0;
+  }
+  & a {
+    text-decoration: none;
+    color: black;
+  }
+  &_botside {
+    display: flex;
+    justify-content: space-between;
+    &_left {
+      margin-left: 15px;
+      & h3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 25px;
+      }
+      & p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.bloc_card {
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 50px;
+  }
+}
+
+.icon_heart {
+  margin: 20px 30px 0 30px;
+  font-size: 25px;
+  .heart_full {
+    display: none;
+    color: white;
+  }
+  &:hover {
+    .heart {
+      display: none;
+    }
+    .heart_full {
+      display: block;
+      color: $color-primary;
+      animation: heart 2s;
+    }
+  }
+}
+
+.menu {
+  border-radius: 30px 30px 0 0;
+  background-color: $color-lightgray;
+  position: relative;
+  padding: 0 20px 50px 20px;
+  & h1 {
+    padding-top: 20px;
+    padding-left: 10px;
+    margin: 0;
+  }
+  & h4 {
+    display: block;
+    margin-left: 10px;
+    padding-bottom: 3px;
+    border-bottom: 3px $color-tertiary solid;
+    width: 40px;
+  }
+  &_topside {
+    display: flex;
+    justify-content: space-between;
+  }
+  &_icon {
+    padding: 30px 30px 0 0;
+    font-size: 20px;
+  }
+  &_card {
+    &:hover {
+      & .menu_card_price_check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 15px 15px 0;
+        font-size: 25px;
+        width: 50px;
+        background: $color-tertiary;
+        color: white;
+        animation: fadeside 2s;
+        cursor: pointer;
+      }
+      & i {
+        animation: rotate 2s;
+      }
+    }
+    background-color: white;
+    @include box-shadow;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin: 10px auto;
+    padding-left: 10px;
+    &_name {
+      width: 100%;
+      overflow: hidden;
+      & > * {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+    &_entree {
+      animation: fadein 1s;
+    }
+    &_plats {
+      animation: fadein 2s;
+    }
+    &_desserts {
+      animation: fadein 3s;
+    }
+    &_price {
+      display: flex;
+      border-radius: 0 15px 15px 0;
+      & p {
+        position: relative;
+        top: 20px;
+        padding-right: 10px;
+        font-weight: bold;
+      }
+      &_check {
+        display: none;
+      }
+    }
+  }
+  & h5 {
+    margin: 5px;
+    font-size: 18px;
+  }
+  & p {
+    margin: 5px;
+    font-size: 14px;
+    @media screen and (min-width: 400px) {
+      font-size: 15px;
+    }
+  }
+  .icon_heart {
+    margin-top: 30px;
+  }
+}
+
+.bloc_menu {
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.menu_entree,
+.menu_plats,
+.menu_desserts {
+  @media screen and (min-width: 1024px) {
+    width: 30%;
+  }
+}
